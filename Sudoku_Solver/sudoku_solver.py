@@ -1,4 +1,8 @@
 import numpy as np  # importing numpy
+import time
+import os
+
+clear = lambda: os.system('cls')
 
 
 def solve(matrix):  # defining function to solve sudoku puzzle
@@ -33,6 +37,9 @@ def solve(matrix):  # defining function to solve sudoku puzzle
 
                     if len(num) == 1:  # checking if all the size of num is 1. If it is not that means there are (cont.)
                         matrix[row, col] = num[0]  # (cont.)multiple values that can be assigned. Num assigned otherwise
+                        print(matrix)
+                        time.sleep(1)
+                        clear()
                     else:
                         pass  # assigning is skipped and will be carried out in future iterations
     return matrix  # once all the zeros are replaced the final matrix is returned
