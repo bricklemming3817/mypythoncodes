@@ -34,11 +34,11 @@ def solve(matrix):  # defining function to solve sudoku
 
                     num = num - mrow  # eliminating numbers present in row from num
                     num = num - mcol  # eliminating numbers present in columns from num
-                    num = list(num)   # converting the set to a list
+                    num = list(num)  # converting the set to a list
 
                     if len(num) == 1:  # if the number of elements in num is one
                         tnum = matrix[row, col]
-                        matrix[row, col] = num[0] # that number is replaced inplace of 0
+                        matrix[row, col] = num[0]  # that number is replaced inplace of 0
                         print('{} at position {},{} replaced to {}'.format(tnum, row, col, num[0]))  # printing summary
 
                     elif counter > counter_:  # this loop is used so that the coming block of codes runs (contd.)
@@ -50,13 +50,15 @@ def solve(matrix):  # defining function to solve sudoku
 
                     if len(num) == 0:  # checking if the number of elements is zero in num
                         i = 1  # this block runs when the randomly assigned value above is wrong
-                        for j in range(len(storage), 1, -1):  # loop which loops through previously stored data in storage
+                        for j in range(len(storage), 1,
+                                       -1):  # loop which loops through previously stored data in storage
                             if storage[-j][0] in matrix[storage[-j][1], :] or storage[-j][0] in matrix[:,
                                                                                                 storage[-j][2]]:
-                                i += 0  # checks if the element is present in row or column of the matrix
+                                pass  # checks if the element is present in row or column of the matrix
                             else:
                                 i += 1  # i is the index of the storage list
-                        matrix[storage[-i][1], storage[-i][2]] = storage[-i][0]  # if the element is absent it is assigned
+                        matrix[storage[-i][1], storage[-i][2]] = storage[-i][
+                            0]  # if the element is absent it is assigned
 
                         for trow, tcol in storage[-i][3]:  # reverting back all the changed to matrix until the (contd.)
                             matrix[trow, tcol] = 0  # (contd.) above substituion
@@ -64,9 +66,10 @@ def solve(matrix):  # defining function to solve sudoku
                                                                                 storage[-i][0]))  # printing summary
                         del storage[-i:]  # deleting the substituted values and values after substitution from storage
 
-        print('number of zeros: {} \n'.format(81 - np.count_nonzero(matrix)))  # printing the number of zeros after each iteration
+        print('number of zeros: {} \n'.format(
+            81 - np.count_nonzero(matrix)))  # printing the number of zeros after each iteration
         counter += 1
-    return matrix  # returning the solved sudoku puzzel!!
+    return matrix  # returning the solved sudoku puzzle!!
 
 
 b = np.array([[0, 0, 2, 0, 0, 9, 0, 0, 0],  # sample unsolved sudoku matrix where zeros are empty spaces
