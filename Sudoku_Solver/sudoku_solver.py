@@ -72,6 +72,16 @@ def solve(matrix):  # defining function to solve sudoku
     return matrix  # returning the solved sudoku puzzle!!
 
 
+a = np.array([[0, 7, 0, 0, 0, 0, 0, 0, 9],  # sample unsolved sudoku matrix where zeros are empty spaces
+              [5, 1, 0, 4, 2, 0, 6, 0, 0],
+              [0, 8, 0, 3, 0, 0, 7, 0, 0],
+              [0, 0, 8, 0, 0, 1, 3, 7, 0],
+              [0, 2, 3, 0, 8, 0, 0, 4, 0],
+              [4, 0, 0, 9, 0, 0, 1, 0, 0],
+              [9, 6, 2, 8, 0, 0, 0, 3, 0],
+              [0, 0, 0, 0, 1, 0, 4, 0, 0],
+              [7, 0, 0, 2, 0, 3, 0, 9, 6]])
+
 b = np.array([[0, 0, 2, 0, 0, 9, 0, 0, 0],  # sample unsolved sudoku matrix where zeros are empty spaces
               [6, 9, 0, 0, 7, 0, 0, 3, 0],
               [0, 0, 0, 3, 5, 2, 6, 0, 0],
@@ -82,14 +92,14 @@ b = np.array([[0, 0, 2, 0, 0, 9, 0, 0, 0],  # sample unsolved sudoku matrix wher
               [0, 2, 0, 0, 1, 0, 0, 5, 3],
               [0, 0, 0, 2, 0, 0, 1, 0, 0]])
 
-a = np.array([[0, 7, 0, 0, 0, 0, 0, 0, 9],  # sample unsolved sudoku matrix where zeros are empty spaces
-              [5, 1, 0, 4, 2, 0, 6, 0, 0],
-              [0, 8, 0, 3, 0, 0, 7, 0, 0],
-              [0, 0, 8, 0, 0, 1, 3, 7, 0],
-              [0, 2, 3, 0, 8, 0, 0, 4, 0],
-              [4, 0, 0, 9, 0, 0, 1, 0, 0],
-              [9, 6, 2, 8, 0, 0, 0, 3, 0],
-              [0, 0, 0, 0, 1, 0, 4, 0, 0],
-              [7, 0, 0, 2, 0, 3, 0, 9, 6]])
+c = np.array([[8, 1, 0, 0, 3, 0, 0, 2, 7],  # sample unsolved sudoku matrix where zeros are empty spaces
+              [0, 6, 2, 0, 5, 0, 0, 9, 0],
+              [0, 7, 0, 0, 0, 0, 0, 0, 0],
+              [0, 9, 0, 6, 0, 0, 1, 0, 0],
+              [1, 0, 0, 0, 2, 0, 0, 0, 4],
+              [0, 0, 8, 0, 0, 5, 0, 7, 0],
+              [0, 0, 0, 0, 0, 0, 0, 8, 0],
+              [0, 2, 0, 0, 1, 0, 7, 5, 0],
+              [3, 8, 0, 0, 7, 0, 0, 4, 2]])
 
 print(solve(b))
